@@ -1,10 +1,10 @@
-n = 2 * 10e5
-sq = []
-i = 1
-while (i*i <= n): 
-    sq.append(i*i)
-    i += 1
+n = 100
 
+d = {i: [] for i in range(1, n + 1)}
 
-print(len(sq))
-print(sq)
+for i in range(1, n + 1): 
+    for j in range(1, 10000): 
+        if (j & i == j): 
+            d[i].append(j)
+
+    print(str(i) + ": " + str(d[i]))
